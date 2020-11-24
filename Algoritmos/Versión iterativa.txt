@@ -1,0 +1,46 @@
+
+INICIO
+	leer L
+	leer N
+
+	EJECUTAR leer  (N, A)
+	B <- A
+	EJECUTAR escribir (N, A)
+	EJECUTAR potencia (N, A, B, L)
+	EJECUTAR escribir (N, B)
+FIN
+
+SUBRUTINA leer (tamaño, matriz)
+	para f = 1, tamaño
+		para c = 1, tamaño
+			leer matriz(f)(c)
+		fin-para
+	fin-para
+FIN-SUBRUTINA
+
+SUBRUTINA escribir (tamaño, matriz)
+	para f = 1, tamaño
+		para c = 1, tamaño
+			escribir matriz(f)(c)
+		fin-para
+	fin-para
+FIN-SUBRUTINA
+
+SUBRUTINA potencia (tamaño, matriz, potencia, exp)
+	para e = 1, exp
+		EJECUTAR producto (tamaño, matriz, potencia)
+	fin-para
+FIN-SUBRUTINA
+
+SUBRUTINA producto (tamaño, A, C)
+	B <- C
+	para f = 1, tamaño
+		para c = 1, tamaño
+			suma = 0
+			para k = 1, n
+				suma <-- suma + A(f)(k)*B(k)(c) 
+			fin-para
+			C(f)(c) = suma
+		fin-para
+	fin-para
+FIN-SUBRUTINA
